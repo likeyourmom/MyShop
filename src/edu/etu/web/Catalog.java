@@ -37,8 +37,8 @@ public class Catalog extends HttpServlet  {
                     filter_param = c.getValue();
                 }
 
-                /*if ("user".equals(c.getName()))
-                    ss.setAttribute("username", c.getValue());*/
+                if ("user".equals(c.getName()))
+                    ss.setAttribute("username", c.getValue());
             }
         }
         response.addCookie(new Cookie("filter", filter_param));
