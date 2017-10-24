@@ -10,8 +10,13 @@ import javax.servlet.http.*;
 
 public class Exit extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.addCookie(new Cookie("user", null));
-        response.addCookie(new Cookie("choise", null));
+        for (Cookie cookie : request.getCookies()) {
+            cookie.setValue("");
+            cookie.setMaxAge(0);
+            cookie.setPath("/");
+
+            response.addCookie(cookie);
+        }
 
         request.getSession().invalidate();
 
