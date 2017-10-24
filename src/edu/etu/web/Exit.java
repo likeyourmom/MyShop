@@ -14,7 +14,6 @@ public class Exit extends HttpServlet {
             cookie.setValue("");
             cookie.setMaxAge(0);
             cookie.setPath("/");
-
             response.addCookie(cookie);
         }
 
