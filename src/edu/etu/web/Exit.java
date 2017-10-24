@@ -16,7 +16,6 @@ public class Exit extends HttpServlet {
             cookie.setPath("/");
             response.addCookie(cookie);
         }
-
         request.getSession().invalidate();
 
         response.sendRedirect(".");
