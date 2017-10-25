@@ -55,6 +55,9 @@ public class PurchaseList implements Serializable {
             result += item.PStr() + " | ";
         }
 
+        if(result != "")
+            result += "итог: " + Double.toString(list.getTotalCost()) + "$";
+
         return result;
     }
 }

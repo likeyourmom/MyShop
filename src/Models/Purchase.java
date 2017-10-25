@@ -41,6 +41,6 @@ public  class Purchase implements Serializable {
     }
 
     public String PStr(){
-        return name + ", " + Integer.toString(count) + " бутылок, итог: " + Double.toString(totalcost) + "$";
+        return name + ", " + Integer.toString(count) + " бутылок";
     }
 }

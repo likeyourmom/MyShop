@@ -11,7 +11,17 @@
 
     <jsp:useBean id="kumissBean" class="Models.Kumiss" scope="session"/>
 </head>
-<body onload="sort()">
+<body onload="sort()<%
+    boolean order_success = false;
+    try {
+        order_success = (boolean)request.getSession().getAttribute("order_success");
+    }catch (Exception ex){}
+    if(order_success){
+        %>;showmsg();<%
+        session.setAttribute("order_success", null);
+    }
+    %>
+">
 <div class="wrapper">
     <jsp:include page="header.jsp"/>
         <div id='container'>
@@ -31,7 +41,8 @@
         </div>
     <jsp:include page="footer.jsp"/>
     <div id="popup1">
-        <span class="info">Товар добавлен в корзину!<br><a href="/cart">Оформить заказ</a></span>
+        <span class="info" id="inf1">Товар добавлен в корзину!<br><a href="/cart">Оформить заказ</a></span>
+        <span class="info" id="inf2" style="display: none; font-size: 1.2em; font-weight: bolder">Заказ принят!</span>
     </div>
 </div>
 </body>

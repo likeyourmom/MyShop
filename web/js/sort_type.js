@@ -38,3 +38,32 @@ function sort(fl) {
         }
     }
 }
+
+function showmsg(){
+    document.getElementById("inf1").style.display = "none";
+    document.getElementById("inf2").style.display = "block";
+
+    document.getElementById("popup1").style.display = "block"
+
+    var f1000 = zdelay(q, 2500);
+    f1000();
+}
+
+function q() {
+    document.getElementById("popup1").style.display = "none"
+
+    document.getElementById("inf1").style.display = "block";
+    document.getElementById("inf2").style.display = "none";
+}
+
+function zdelay(f, ms) {
+    return function() {
+        var savedThis = this;
+        var savedArgs = arguments;
+
+        setTimeout(function() {
+            f.apply(savedThis, savedArgs);
+        }, ms);
+    };
+
+}
