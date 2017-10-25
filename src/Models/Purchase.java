@@ -39,4 +39,8 @@ public  class Purchase implements Serializable {
     public double getTotalcost() {
         return totalcost;
     }
+
+    public String PStr(){
+        return name + ", " + Integer.toString(count) + " бутылок, итог: " + Double.toString(totalcost) + "$";
+    }
 }

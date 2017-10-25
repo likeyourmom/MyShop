@@ -520,6 +520,14 @@ span#result{
     }
 }
 
+.order{
+    display: block;
+    width: 100%;
+    text-align: right;
+    margin: 0px 0px 60px -10px;
+    font-size: 1.3em;
+}
+
 footer{
     padding: 20px;
     background: #b26839;

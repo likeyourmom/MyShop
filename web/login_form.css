@@ -206,3 +206,66 @@ a.button{
     text-align: center;
     text-decoration: none;
 }
+
+/* ORDER FORM */
+form.order_form{
+    width: 300px;
+    margin: 30px auto 0px;
+    padding: 10px;
+    font-size: 18px;
+    line-height: 30px;
+    text-align: center;
+    border: 3px solid #d27b43;
+    border-radius: 15px;
+}
+
+input[type=checkbox]{
+    height: 0;
+    width: 0;
+    visibility: hidden;
+}
+
+label {
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 50px;
+    height: 25px;
+    background: #d27b43;
+    display: block;
+    border-radius: 100px;
+    position: relative;
+    margin-top: -20px;
+}
+
+label:after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 10px;
+    height: 15px;
+    background: #fff;
+    border-radius: 90px;
+    transition: 0.3s;
+}
+
+input:checked + label {
+    background: rgba(255,146,10,1);
+}
+
+input:checked + label:after {
+    left: calc(100% - 5px);
+    transform: translateX(-100%);
+}
+
+label:active:after {
+    width: 50px;
+}
+
+.a_input{
+    width: 246px;
+}
+
+select#shop-choice{
+    height: 23px;
+}

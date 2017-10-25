@@ -59,6 +59,10 @@
                         </c:forEach>
                     </table>
                     <span id = "result"><fmt:message key="result"/>: ${sessionScope.purchases.totalCost} $</span>
+
+                    <span class="discr order">
+                        <a href="./order"><fmt:message key="Order"/></a>
+                    </span>
                 </c:if>
             </c:if>
     </div>

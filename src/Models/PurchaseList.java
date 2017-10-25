@@ -48,4 +48,13 @@ public class PurchaseList implements Serializable {
     public void setPurchases(ArrayList<Purchase> purchases) {
         this.purchases = purchases;
     }
+
+    public String getStr(PurchaseList list){
+        String result = "";
+        for (Purchase item : list.purchases) {
+            result += item.PStr() + " | ";
+        }
+
+        return result;
+    }
 }
