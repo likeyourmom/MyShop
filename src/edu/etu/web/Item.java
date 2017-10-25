@@ -126,9 +126,8 @@ public class Item extends HttpServlet {
         "</ul>");
         sb.append("<div id='overlay' onclick='closeform()'></div>" +
                 "<div id='login-form'>" +
-                "<h1>" + bundle.getString("enter") + "</h1>" +
-                "<input type='text' id='name' placeholder='Name'/>" +
-                "<a class='button10' onclick='enter()'>OK</a>" +
+                "<h1>" + bundle.getString("need_auth") + "</h1>" +
+                "<a class='button10' onclick='closeform()'>OK</a>" +
                 "</div>");
         sb.append("	</div>");
         //Header end
