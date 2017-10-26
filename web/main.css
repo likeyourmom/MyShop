@@ -533,6 +533,7 @@ span#result{
 
 div.cabinet_block{
     display: inline-block;
+    min-width: 248px;
 }
 
 div.cabinet_block table{

@@ -23,16 +23,17 @@ public class Cabinet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
             Cookie[] cookies = request.getCookies();
-            String lang = "";
+            String lang = request.getParameter("lang");
             String choise = (String)request.getSession().getAttribute("choise");
 
-            for (Cookie c : cookies) {
-                if ("lang".equals(c.getName()))
-                    lang = c.getValue();
-
-               /* if ("choise".equals(c.getName()))
-                    choise = c.getValue();*/
+            if(lang == null) {
+                for (Cookie c : cookies) {
+                    if ("lang".equals(c.getName()))
+                        lang = c.getValue();
+                }
             }
+            request.getSession().setAttribute("locale", lang);
+            response.addCookie(new Cookie("lang",lang));
 
             Locale locale;
             if ("en".equals(lang)) {
@@ -101,16 +102,16 @@ public class Cabinet extends HttpServlet {
                 String curier, adr;
 
                 sb.append("<div class='cabinet_block' style='position: absolute'>");
-                sb.append("<table id='cart_table'>");
+                sb.append("<table id='cart_table' width='880px'>");
                 sb.append("	<thead>");
-                sb.append("		<td width='125px'>Date</td><td>List</td><td>Curier</td><td>Addressee</td>");
+                sb.append("		<td width='125px'>" + bundle.getString("date") + "</td><td>" + bundle.getString("list") + "</td><td>" + bundle.getString("curier") + "</td><td>" + bundle.getString("Addresse") + "</td>");
                 sb.append("	</thead>");
                 for(OrdersEntity order : orders) {
                     if(order.getWithCurier() == 0){
-                        curier = "Yes";
-                        adr = "Shop #" + Integer.toString(order.getShopId());
+                        curier = bundle.getString("no");
+                        adr = bundle.getString("title") + " #" + Integer.toString(order.getShopId());
                     }else{
-                        curier = "No";
+                        curier = bundle.getString("yes");
                         adr = order.getAddressee();
                     }
 
