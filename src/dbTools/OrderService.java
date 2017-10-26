@@ -17,7 +17,8 @@ public class OrderService {
         ArrayList<OrdersEntity> orders = new ArrayList<>();
         for(Iterator iterator = purchases.iterator(); iterator.hasNext();){
             OrdersEntity order = (OrdersEntity)iterator.next();
-            if(order.getUserName().equals(userName)) orders.add(order);
+            if(order.getUserName().equals(userName))
+                orders.add(order);
         }
 
         session.getTransaction().commit();

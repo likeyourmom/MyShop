@@ -25,12 +25,13 @@
 <head>
     <link rel="stylesheet" href="./main.css" type="text/css">
     <link rel="stylesheet" href="./login_form.css" type="text/css">
+
     <script src="./js/map_worker.js"></script>
 
     <title><fmt:message key="title"/> | <fmt:message key="cart"/></title>
 </head>
 
-<body onload="initMap()">
+<body>
 <div class="wrapper">
     <jsp:include page="header.jsp"/>
     <div id='container'>
@@ -57,6 +58,8 @@
                 <input class="button" type="submit" value="<fmt:message key="HandleOrder" />">
             </div>
         </form>
+        <div id="map"></div>
+        <script src="https://https://api-maps.yandex.ru/2.1/?load=package.full&lang=ru_RU&onload=initMap"></script>
     </div>
     <jsp:include page="footer.jsp"/>
 </div>

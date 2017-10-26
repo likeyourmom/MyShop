@@ -531,6 +531,21 @@ span#result{
     font-size: 1.3em;
 }
 
+div.cabinet_block{
+    display: inline-block;
+}
+
+div.cabinet_block table{
+    margin-left: 25px;
+    width: 880px !important;
+}
+
+div#map{
+    width: 600px;
+    height: 400px;
+    margin: 20px auto 0px;
+}
+
 footer{
     padding: 20px;
     background: #b26839;

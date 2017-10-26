@@ -2,52 +2,41 @@ var map;
 var first;
 var second;
 var third;
+
 function initMap() {
-    map = new google.maps.Map(document.getElementById('map'), {
-        center: {lat: 59.967, lng: 30.31},
-        zoom: 14
-    });
-    first = new google.maps.Marker({
-        position: {lat:59.99105,lng:30.3186},
-        label: "Первая юрта",
-        map: map
-    });
-    first.addListener('click', function() {
-        map.setCenter(first.position);
-        document.getElementById("shop-choice").value = 1;
-        map.setZoom(14);
+    map = new ymaps.Map("map", {
+        center: [49.803737, 73.087571],
+        zoom: 15
     });
 
-    second = new google.maps.Marker({
-        position: {lat:60.004,lng:30.2814},
-        label: "Вторая юрта",
-        map: map
-    });
-    second.addListener('click', function() {
-        map.setCenter(second.position);
-        document.getElementById("shop-choice").value = 2;
-        map.setZoom(14);
-    });
+    map.controls.add('smallZoomControl', {top: 25, left: 5});
 
-    third = new google.maps.Marker({
-        position: {lat:59.971665,lng:30.2581},
-        label: "Третья юрта",
-        map: map
-    });
-    third.addListener('click', function() {
-        map.setCenter(third.position);
-        document.getElementById("shop-choice").value = 3;
-        map.setZoom(14);
-    });
-    map.setCenter(second.position);
+    first = new yamaps.Placemark([49.806335, 73.053235], {balloonContent: "Первая юрта"});
+    second = new yamaps.Placemark([49.803737, 73.087571], {balloonContent: "Вторая юрта"});
+    third = new yamaps.Placemark([49.779054, 73.133193], {balloonContent: "Третья юрта"});
+
+    map.geoObjects.add(first);
+    map.geoObjects.add(second);
+    map.geoObjects.add(third);
+
+    first.balloon.open();
+    second.balloon.open();
+    third.balloon.open();
 }
 
 function changeShop() {
     var shop = document.getElementById("shop-choice").value;
+
     switch (shop){
-        case '1':map.setCenter(first.position);break;
-        case '2':map.setCenter(second.position);break;
-        case '3':map.setCenter(third.position);break;
+        case '1':
+            map.setCenter([49.806335, 73.053235]);
+            break;
+        case '2':
+            map.setCenter([49.803737, 73.087571]);
+            break;
+        case '3':
+            map.setCenter([49.779054, 73.133193]);
+            break;
     }
 }
 
