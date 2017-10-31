@@ -4,6 +4,7 @@ var second;
 var third;
 
 function initMap() {
+    console.log("Инициализируем карту");
     map = new ymaps.Map("map", {
         center: [49.803737, 73.087571],
         zoom: 15
