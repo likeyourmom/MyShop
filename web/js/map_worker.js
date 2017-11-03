@@ -4,30 +4,46 @@ var second;
 var third;
 
 function initMap() {
-    console.log("Инициализируем карту");
     map = new ymaps.Map("map", {
         center: [49.803737, 73.087571],
-        zoom: 15
+        zoom: 17
     });
 
-    map.controls.add('smallZoomControl', {top: 25, left: 5});
+    first = new ymaps.Placemark([49.806335, 73.053235],
+        {balloonContent: "Первая юрта"},
+        {
+            iconLayout: 'default#image',
+            iconImageHref: '../img/map.png',
+            iconImageSize: [60, 77],
+            iconImageOffset: [-32, -70]
+        });
 
-    first = new yamaps.Placemark([49.806335, 73.053235], {balloonContent: "Первая юрта"});
-    second = new yamaps.Placemark([49.803737, 73.087571], {balloonContent: "Вторая юрта"});
-    third = new yamaps.Placemark([49.779054, 73.133193], {balloonContent: "Третья юрта"});
+    second = new ymaps.Placemark([49.803737, 73.087571],
+        {balloonContent: "Вторая юрта"},
+        {
+            iconLayout: 'default#image',
+            iconImageHref: '../img/map.png',
+            iconImageSize: [60, 77],
+            iconImageOffset: [-32, -70]
+        });
+    third = new ymaps.Placemark([49.779054, 73.133193],
+        {balloonContent: "Третья юрта"},
+        {
+            iconLayout: 'default#image',
+            iconImageHref: '../img/map.png',
+            iconImageSize: [60, 77],
+            iconImageOffset: [-32, -70]
+        });
 
     map.geoObjects.add(first);
     map.geoObjects.add(second);
     map.geoObjects.add(third);
-
-    first.balloon.open();
-    second.balloon.open();
-    third.balloon.open();
 }
 
 function changeShop() {
     var shop = document.getElementById("shop-choice").value;
 
+    map.setZoom(17);
     switch (shop){
         case '1':
             map.setCenter([49.806335, 73.053235]);

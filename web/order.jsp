@@ -46,9 +46,9 @@
                 <div id="shop">
                     <fmt:message key="ShopChoice" /><br>
                     <select name="shop-choice" id="shop-choice" onchange="changeShop()">
-                        <option value="1">Первая юрта, ул.Абая 7</option>
-                        <option value="2" selected>Вторая юрта, ул.Бухар-Жырау 37/2</option>
-                        <option value="3">Третья юрта, ул.Сейфулина 77</option>
+                        <option value="1">Первая юрта, ул.Седова 26</option>
+                        <option value="2" selected>Вторая юрта, ул.Бухар-Жырау 56/2</option>
+                        <option value="3">Третья юрта, пр.Строителей 33/2</option>
                     </select>
                 </div>
                 <div id="courier" style="display:none">
@@ -59,7 +59,7 @@
             </div>
         </form>
         <div id="map"></div>
-        <script src="https://https://api-maps.yandex.ru/2.1/?load=package.full&lang=ru_RU&onload=initMap"></script>
+        <script src="https://api-maps.yandex.ru/2.1/?load=package.full&lang=ru_RU&onload=initMap"></script>
     </div>
     <jsp:include page="footer.jsp"/>
 </div>
