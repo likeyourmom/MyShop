@@ -6,7 +6,8 @@ var third;
 function initMap() {
     map = new ymaps.Map("map", {
         center: [49.803737, 73.087571],
-        zoom: 17
+        zoom: 17,
+        controls: ['smallMapDefaultSet']
     });
 
     first = new ymaps.Placemark([49.806335, 73.053235],
@@ -14,8 +15,8 @@ function initMap() {
         {
             iconLayout: 'default#image',
             iconImageHref: '../img/map.png',
-            iconImageSize: [60, 77],
-            iconImageOffset: [-32, -70]
+            iconImageSize: [55, 40],
+            iconImageOffset: [-28, -39]
         });
 
     second = new ymaps.Placemark([49.803737, 73.087571],
@@ -23,16 +24,16 @@ function initMap() {
         {
             iconLayout: 'default#image',
             iconImageHref: '../img/map.png',
-            iconImageSize: [60, 77],
-            iconImageOffset: [-32, -70]
+            iconImageSize: [55, 40],
+            iconImageOffset: [-28, -39]
         });
     third = new ymaps.Placemark([49.779054, 73.133193],
         {balloonContent: "Третья юрта"},
         {
             iconLayout: 'default#image',
             iconImageHref: '../img/map.png',
-            iconImageSize: [60, 77],
-            iconImageOffset: [-32, -70]
+            iconImageSize: [55, 40],
+            iconImageOffset: [-28, -39]
         });
 
     map.geoObjects.add(first);

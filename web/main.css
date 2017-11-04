@@ -544,7 +544,9 @@ div.cabinet_block table{
 div#map{
     width: 600px;
     height: 400px;
-    margin: 20px auto 0px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
 }
 
 footer{

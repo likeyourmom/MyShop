@@ -34,7 +34,7 @@
 <body>
 <div class="wrapper">
     <jsp:include page="header.jsp"/>
-    <div id='container'>
+    <div id='container' style="text-align: center">
         <form method="post" action="./order" class="order_form">
             <div id="order-settings">
                 <fmt:message key="DeliveryType" />

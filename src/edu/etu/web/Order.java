@@ -16,8 +16,6 @@ public class Order extends HttpServlet {
         PurchaseList purchasesList = (PurchaseList)session.getAttribute("purchases");
         String purchases = purchasesList.getStr(purchasesList);
 
-        System.out.println(purchases);
-
         OrdersEntity order;
 
         String withCurier = request.getParameter("type-choice");
