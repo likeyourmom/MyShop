@@ -6,6 +6,7 @@ import dbTools.OrdersEntity;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
@@ -15,8 +16,11 @@ import javax.servlet.http.*;
 public class Cabinet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String choise = request.getParameter("choise");
+
         response.addCookie(new Cookie("choise", choise));
         request.getSession().setAttribute("choise", choise);
+
+        log(new Date().toString()+": пользователь " + request.getSession().getAttribute("username") + " изменил фильтр по умолчанию");
 
         doGet(request, response);
     }

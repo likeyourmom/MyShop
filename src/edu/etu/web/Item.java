@@ -2,8 +2,10 @@ package edu.etu.web;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Date;
 import java.util.Locale;
 import java.util.ResourceBundle;
+import java.lang.String;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
@@ -73,6 +75,13 @@ public class Item extends HttpServlet {
         }
         response.addCookie(new Cookie("id", id));
 
+        String user = (String)ss.getAttribute("username");
+
+        if(user != null && user != ""){
+            log(new Date().toString()+": пользователь " + user + " смотрит товар под номером " + id);
+        }else{
+            log(new Date().toString()+":  неизвестный пользователь смотрит товар под номером " + id);
+        }
 
         String description;
 
@@ -84,8 +93,8 @@ public class Item extends HttpServlet {
             default: description = bundle.getString("discr" + id);
         }
 
-        String userinfo = "<a onclick='showform()'>" + bundle.getString("enter") + "</a>";
-        String user = (String)ss.getAttribute("username");
+        String userinfo = "<a href='./login'>" + bundle.getString("enter") + "</a>";
+
         if(user != null && user != "")
             userinfo = "<a href='./cabinet' id='lll'>" + bundle.getString("loginas") + " <b>" + user + "</b></a>";
 

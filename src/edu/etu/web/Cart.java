@@ -6,6 +6,7 @@ import Models.PurchaseList;
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
 import java.io.IOException;
+import java.util.Date;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
@@ -46,17 +47,15 @@ public class Cart extends HttpServlet {
             locale = Locale.getDefault();
         }
 
+        int total = one + two + three;
+        log(new Date().toString()+": пользователь " + ss.getAttribute("username") + " смотрит корзину с " + total + "товаром(и)");
+
         ResourceBundle bundle = ResourceBundle.getBundle("res", locale);
         cost1 = Double.parseDouble(bundle.getString("cost1"));
         cost2 = Double.parseDouble(bundle.getString("cost2"));
         cost3 = Double.parseDouble(bundle.getString("cost3"));
 
         PurchaseList purchases = new PurchaseList();
-        /*try
-            purchases = (PurchaseList)ss.getAttribute("purchases");
-        }
-        catch (Exception ex){}
-        if(purchases == null) purchases = new PurchaseList();*/
 
         purchases.addPurchase(new Purchase(1, bundle.getString("name1"), bundle.getString("discr1"), "./img/items/1.png", one, cost1));
         purchases.addPurchase(new Purchase(2, bundle.getString("name2"), bundle.getString("discr2"), "./img/items/2.png",  two, cost2));

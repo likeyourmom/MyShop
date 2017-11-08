@@ -3,6 +3,7 @@ package edu.etu.web;
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
 import java.io.IOException;
+import java.util.Date;
 
 import Models.PurchaseList;
 import dbTools.OrdersEntity;
@@ -28,6 +29,7 @@ public class Order extends HttpServlet {
         }
 
         OrderService.saveOrder(order);
+        log(new Date().toString()+": пользователь " + userName + " оформил свой заказ, а мы подняли бабла!");
 
         session.setAttribute("purchases",null);
         session.setAttribute("order_success", true);

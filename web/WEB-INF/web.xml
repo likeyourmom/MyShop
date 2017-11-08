@@ -30,6 +30,22 @@
         </form-login-config>
     </login-config>
 
+    <filter>
+        <display-name>LogFilter</display-name>
+        <filter-name>LogFilter</filter-name>
+        <filter-class>Logfilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>LogFilter</filter-name>
+        <url-pattern>/</url-pattern>
+        <url-pattern>/login</url-pattern>
+        <url-pattern>/item</url-pattern>
+        <url-pattern>/cart</url-pattern>
+        <url-pattern>/order</url-pattern>
+        <url-pattern>/cabinet</url-pattern>
+        <url-pattern>/exit</url-pattern>
+    </filter-mapping>
+
     <servlet>
         <servlet-name>Item</servlet-name>
         <servlet-class>edu.etu.web.Item</servlet-class>

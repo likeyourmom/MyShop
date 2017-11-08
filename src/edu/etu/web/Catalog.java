@@ -1,6 +1,7 @@
 package edu.etu.web;
 
 import java.io.IOException;
+import java.util.Date;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
@@ -14,6 +15,8 @@ public class Catalog extends HttpServlet  {
         }else {
             request.getSession().setAttribute("username", user);
             response.addCookie(new Cookie("user", user));
+
+            log(new Date().toString()+": пользователь " + user + " авторизовался");
 
             doGet(request, response);
         }
