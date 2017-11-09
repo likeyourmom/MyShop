@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.nio.ByteBuffer;
+import java.nio.charset.Charset;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -16,6 +18,9 @@ import java.util.Date;
 public class Comments extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String text = request.getParameter("text");
+
+        System.out.println(text);
+
         String userName = (String)request.getSession().getAttribute("username");
 
         CommentEntity comment = new CommentEntity(text,userName);
@@ -35,6 +40,9 @@ public class Comments extends HttpServlet {
             allCommentsHtml.append("	<p>" + comment.getText() + "</p>");
             allCommentsHtml.append("</div>");
         }
+
+        if(allCommentsHtml.length() == 0)
+            allCommentsHtml.append("EMPTY");
 
         response.setContentType("text/html");
         response.setCharacterEncoding("UTF-8");

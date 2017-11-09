@@ -11,7 +11,7 @@ public class CommentEntity {
     @GeneratedValue
     @Column(name = "Id", nullable = false)
     private int id;
-    @Column(name = "Text", nullable = false, length = 64)
+    @Column(name = "Text", nullable = false, length = 128)
     private String text;
     @Column(name = "CommentDate", nullable = false, length = 32)
     private String commentDate;

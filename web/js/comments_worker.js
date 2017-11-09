@@ -1,3 +1,5 @@
+var timer = setInterval(function () {loadComments()}, 1000);
+
 function loadComments() {
     var xmlhttp;
 
@@ -20,7 +22,13 @@ function loadComments() {
 }
 
 function sendComment(){
-    var xhr = new XMLHttpRequest();
+    var xhr;
+
+    if (window.XMLHttpRequest)
+        xhr = new XMLHttpRequest();
+    else
+        xhr = new ActiveXObject("Microsoft.XMLHTTP");
+
     var sel_cat = document.getElementById("message").value;
     var result_cat = encodeURIComponent(sel_cat);
 

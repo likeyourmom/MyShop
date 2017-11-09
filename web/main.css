@@ -583,10 +583,13 @@ div#comments-area textarea{
 
 div.comment p{
     padding: 0 !important;
-    font-size: 14px !important;
+    font-size: 16px !important;
     font-weight: normal !important;
     text-align: left !important;
     text-indent: 10px !important;
+    text-transform: none !important;
+    max-width: 800px;
+    word-break: break-all;
 }
 
 span.c_info b{

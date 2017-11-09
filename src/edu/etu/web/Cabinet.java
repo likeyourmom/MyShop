@@ -138,7 +138,7 @@ public class Cabinet extends HttpServlet {
             sb.append("<h1 class='c_title'>" + bundle.getString("reviews") + "</h1>");
             sb.append("<hr noshade size='5' color='#D27B43'>");
             sb.append("<div id='comments'></div>");
-            sb.append("<textarea id='message' placeholder='Оставьте ваш отзыв!' maxlength=64></textarea>");
+            sb.append("<textarea id='message' placeholder='Оставьте ваш отзыв!' maxlength=128></textarea>");
             sb.append("<button class='button' onclick='sendComment()'>Send</button>");
             sb.append("	</div>");
             sb.append("	</div>");
