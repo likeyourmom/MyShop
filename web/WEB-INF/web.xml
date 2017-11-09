@@ -113,6 +113,16 @@
     </servlet-mapping>
 
     <servlet>
+        <servlet-name>Commetns</servlet-name>
+        <servlet-class>edu.etu.web.Comments</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Commetns</servlet-name>
+        <url-pattern>/comments</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
         <servlet-name>Exit</servlet-name>
         <servlet-class>edu.etu.web.Exit</servlet-class>
     </servlet>

@@ -34,7 +34,7 @@
         }
         %></li>
     <li><a href="/cart"><%= res.getString("cart")%></a></li>
-    <li><a><%= res.getString("history")%></a></li>
+    <%--<li><a><%= res.getString("history")%></a></li>--%>
 </ul>
 
 <div id="overlay" onclick="closeform()"></div>

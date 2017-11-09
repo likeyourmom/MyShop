@@ -131,7 +131,7 @@ public class Item extends HttpServlet {
         sb.append("<ul id='menu' class='user_info' style='width: auto'>" +
         "<li>" + userinfo + "</li>" +
         "<li><a href='/cart'>" + bundle.getString("cart") + "</a></li>" +
-        "<li><a>" + bundle.getString("history") + "</a></li>" +
+        //"<li><a>" + bundle.getString("history") + "</a></li>" +
         "</ul>");
         sb.append("<div id='overlay' onclick='closeform()'></div>" +
                 "<div id='login-form'>" +

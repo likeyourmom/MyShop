@@ -57,9 +57,10 @@ public class Cabinet extends HttpServlet {
                     "<meta charset='UTF-8'>" +
                     "<title>" + bundle.getString("title") + "</title>" +
                     "<script src='./js/cabinet_worker.js'></script>" +
+                    "<script src='./js/comments_worker.js'></script>" +
                     "<link rel=\"stylesheet\" href=\"main.css\">" +
                     "<link rel=\"stylesheet\" href=\"login_form.css\">");
-            sb.append("</head>" + "<body onload='checked(" + choise + ")'>");
+            sb.append("</head>" + "<body onload='checked(" + choise + ");loadComments()'>");
 
             //Wrapper
             sb.append("<div class='wrapper'>");
@@ -78,18 +79,20 @@ public class Cabinet extends HttpServlet {
             sb.append("</ul>");
             sb.append("<ul id='menu' class='user_info' style='width: auto'>" +
                     "<li><a href='/cart'>" + bundle.getString("cart") + "</a></li>" +
-                    "<li><a>" + bundle.getString("history") + "</a></li>" +
+                    //"<li><a>" + bundle.getString("history") + "</a></li>" +
                     "</ul>");
             //Header end
             sb.append("	</div>");
 
             //Container
-            sb.append("	<div id='container' style='padding: 30px'>");
+            sb.append("	<div id='container' style='padding: 20px 30px;'>");
 
             String user = (String)request.getSession().getAttribute("username");
             ArrayList<OrdersEntity> orders = OrderService.getUserAllPurchases(user);
 
-            sb.append("<div class='cabinet_block'>");
+            sb.append("<div class='cabinet_block' style='margin-top: 15px'>");
+            sb.append("<div id='datetime'></div>");
+            sb.append("<script>enableDateTimer()</script>");
             sb.append("<span id='cabinet_name'>" + bundle.getString("loginas") + " <u>" + user + "</u></span>");
 
             sb.append("<form action='./cabinet' method='post' id='cabinet_form'>");
@@ -102,10 +105,10 @@ public class Cabinet extends HttpServlet {
             sb.append("    <span><a href='./exit' class=\"button\">Exit</a></span>");
             sb.append("</div>");
 
+            sb.append("<div class='cabinet_block'>");
             if(orders.size() > 0){
                 String curier, adr;
 
-                sb.append("<div class='cabinet_block' style='position: absolute'>");
                 sb.append("<table id='cart_table' width='880px'>");
                 sb.append("	<thead>");
                 sb.append("		<td width='125px'>" + bundle.getString("date") + "</td><td>" + bundle.getString("list") + "</td><td>" + bundle.getString("curier") + "</td><td>" + bundle.getString("Addresse") + "</td>");
@@ -127,8 +130,18 @@ public class Cabinet extends HttpServlet {
                     sb.append("</tr>");
                 }
                 sb.append("</table>");
-                sb.append("</div>");
+            }else{
+                sb.append("EMPTY");
             }
+
+            sb.append("<div id='comments-area' height='500px'>");
+            sb.append("<h1 class='c_title'>" + bundle.getString("reviews") + "</h1>");
+            sb.append("<hr noshade size='5' color='#D27B43'>");
+            sb.append("<div id='comments'></div>");
+            sb.append("<textarea id='message' placeholder='Оставьте ваш отзыв!' maxlength=64></textarea>");
+            sb.append("<button class='button' onclick='sendComment()'>Send</button>");
+            sb.append("	</div>");
+            sb.append("	</div>");
 
             sb.append("</div>");
             //Container end

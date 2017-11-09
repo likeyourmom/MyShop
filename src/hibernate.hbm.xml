@@ -12,4 +12,10 @@
         <property name="withCurier" column="WithCurier"/>
         <property name="shopId" column="ShopId"/>
     </class>
+    <class name="dbTools.CommentEntity" table="comments" schema="myshop_database">
+        <id name="id" column="id"/>
+        <property name="text" column="Text"/>
+        <property name="commentDate" column="CommentDate"/>
+        <property name="userName" column="UserName"/>
+    </class>
 </hibernate-mapping>

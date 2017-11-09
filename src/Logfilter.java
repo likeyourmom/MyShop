@@ -30,8 +30,6 @@ public class Logfilter implements Filter {
 
         String user = (String)httpReq.getSession().getAttribute("username");
 
-        //System.out.println("метод " + methodOrder + ", url " + uri + ", юзер " + user + ", фильтр " + filter);
-
         switch (uri){
             case "/":
                 if(methodOrder.equals("POST")){
