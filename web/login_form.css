@@ -1,4 +1,9 @@
-*{font-family: 'Roboto', sans-serif;}
+@font-face {
+    font-family: kumissShrift; /* Гарнитура шрифта */
+    src: url('/KZ_Dusha.ttf'); /* Путь к файлу со шрифтом */
+}
+
+*{font-family: 'kumissShrift';}
 
 #boxForm
 {
@@ -8,7 +13,7 @@
 
 #boxForm #title
 {
-    font-family: 'Nothing You Could Do', cursive;
+    font-family: 'kumissShrift';
     font-weight:bold;
     text-align:center;
     padding-top:30px;
@@ -28,7 +33,7 @@
     border-style:none;
     border-bottom-style:solid;
     border-color:rgb(244, 102, 27);
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'kumissShrift', sans-serif;
     font-size:15px;
     color:rgb(244, 102, 27);
     background-color:rgb(255, 203, 96);
@@ -66,7 +71,7 @@ form label
     float:left;
     margin-left:5px;
     color:rgb(244, 102, 27);
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'kumissShrift', sans-serif;
     font-size:12px;
 }
 
@@ -90,7 +95,7 @@ form label
     background: linear-gradient(to bottom, rgba(255,175,75,1) 0%,rgba(255,146,10,1) 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffaf4b', endColorstr='#ff920a',GradientType=0 ); /* IE6-9 */
 
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'kumissShrift', sans-serif;
 
     font-size:15px;
     border-style:none;
@@ -106,7 +111,7 @@ form label
 /* CABINET */
 
 span#cabinet_name{
-    font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+    font-family: "kumissShrift", sans-serif;
     text-transform: uppercase;
 }
 
@@ -115,7 +120,7 @@ span#cabinet_name i{
 }
 
 form#cabinet_form{
-    font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+    font-family: "kumissShrift", sans-serif;
     line-height: 30px;
 }
 
@@ -220,13 +225,13 @@ form.order_form{
     border-radius: 15px;
 }
 
-input[type=checkbox]{
+form.order_form input[type=checkbox]{
     height: 0;
     width: 0;
     visibility: hidden;
 }
 
-label {
+form.order_form label {
     cursor: pointer;
     text-indent: -9999px;
     width: 50px;
@@ -238,7 +243,7 @@ label {
     margin-top: -20px;
 }
 
-label:after {
+form.order_form label:after {
     content: '';
     position: absolute;
     top: 5px;
@@ -250,16 +255,16 @@ label:after {
     transition: 0.3s;
 }
 
-input:checked + label {
+form.order_form input:checked + label {
     background: rgba(255,146,10,1);
 }
 
-input:checked + label:after {
+form.order_form input:checked + label:after {
     left: calc(100% - 5px);
     transform: translateX(-100%);
 }
 
-label:active:after {
+form.order_form label:active:after {
     width: 50px;
 }
 

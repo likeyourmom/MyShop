@@ -43,6 +43,7 @@
         <url-pattern>/cart</url-pattern>
         <url-pattern>/order</url-pattern>
         <url-pattern>/cabinet</url-pattern>
+        <url-pattern>/comments</url-pattern>
         <url-pattern>/exit</url-pattern>
     </filter-mapping>
 

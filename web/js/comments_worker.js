@@ -44,6 +44,25 @@ function sendComment(){
     }
 }
 
+function delcomment(x) {
+    var xhr;
+
+    if (window.XMLHttpRequest)
+        xhr = new XMLHttpRequest();
+    else
+        xhr = new ActiveXObject("Microsoft.XMLHTTP");
+
+    xhr.open("POST", "/comments", true)
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
+    xhr.send("del=" + x.toString());
+
+    xhr.onreadystatechange = function (){
+        if(xhr.readyState == 4){
+            loadComments();
+        }
+    }
+}
+
 function enableDateTimer() {
     document.getElementById("datetime").innerHTML = getDate(new Date());
 

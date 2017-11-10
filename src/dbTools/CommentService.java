@@ -7,7 +7,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class CommentService {
-    public static ArrayList<CommentEntity> getUserAllComments(String userName)
+    public static ArrayList<CommentEntity> getAllComments()
     {
         Session session =  HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
@@ -27,9 +27,23 @@ public class CommentService {
     }
 
     public static void saveComment(CommentEntity comment){
-        Session session =  HibernateUtil.getSessionFactory().openSession();
+        Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
         session.save(comment);
+        session.getTransaction().commit();
+        session.close();
+    }
+
+    public static  void deleteComment(int id, String username) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        session.beginTransaction();
+
+        CommentEntity comment = session.get(CommentEntity.class, id);
+        if (comment.getUserName().equals(username)){
+            session.delete(comment);
+            session.flush();
+        }
+
         session.getTransaction().commit();
         session.close();
     }

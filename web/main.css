@@ -1,3 +1,8 @@
+@font-face {
+    font-family: kumissShrift; /* Гарнитура шрифта */
+    src: url('/KZ_Dusha.ttf'); /* Путь к файлу со шрифтом */
+}
+
 /* Eric Meyer's CSS Reset */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -15,8 +20,9 @@ time, mark, audio, video {
     margin: 0;
     padding: 0;
     border: 0;
-    font-size: 100%;
-    font: inherit;
+    font-family: kumissShrift;
+    font-size: 103%;
+    /*font: inherit;*/
     vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -120,7 +126,7 @@ ul#lang li a {
     background:#b6693b; /*добавляем фон к пункту меню*/
     color:#fff; /*меняем цвет ссылок*/
     padding:10px; /*добавляем отступ*/
-    font-family: arial; /*меняем шрифт*/
+    /*font-family: arial; /*меняем шрифт*/
     border-radius:4px; /*добавляем скругление*/
     -moz-transition: all 0.3s 0.01s ease; /*делаем плавный переход*/
     -o-transition: all 0.3s 0.01s ease;
@@ -152,7 +158,7 @@ ul#menu a {
     background:#b26839; /*добавляем фон к пункту меню (заменив этот параметр, вы поменяете цвет всех пунктов меню)*/
     color:#fff; /*меняем цвет ссылок*/
     padding:0px 15px; /*добавляем отступ*/
-    font-family: arial; /*меняем шрифт*/
+    /*font-family: arial; /*меняем шрифт*/
     line-height:50px; /*ровняем меню по вертикали*/
     display: block;
     border-right: 1px solid #985000; /*добавляем бордюр справа*/
@@ -302,23 +308,6 @@ span.info a{
     font-weight: bolder;
 }
 
-@-webkit-keyframes example {
-    0% {opacity: 0;}
-    25% {opacity: 0.3;}
-    50% {opacity:0.5;}
-    75% {opacity:0.7;}
-    100% {opacity:1;}
-}
-
-/* Standard syntax */
-@keyframes example {
-    0% {opacity: 0;}
-    25% {opacity: 0.3;}
-    50% {opacity:0.5;}
-    75% {opacity:0.7;}
-    100% {opacity:1;}
-}
-
 @keyframes slideUp {
     0% {
         transform: translateY(100%);
@@ -446,7 +435,7 @@ table#cart_table{
     width: 100%;
     margin-bottom: 20px;
     text-align: center;
-    font-size: 1.1em;
+    font-size: 16px;
 }
 
 table#cart_table thead{
@@ -538,8 +527,9 @@ div.cabinet_block{
 }
 
 div.cabinet_block table{
-    margin-left: 25px;
-    width: 880px !important;
+    width: 900px !important;
+    animation-name: example;
+    animation-duration: 1s;
 }
 
 div#map{
@@ -557,6 +547,7 @@ div#datetime{
 }
 
 div.comment{
+    width: 875px;
     font-size: 1.1em;
     padding: 10px;
     border: 3px solid #D27B43;
@@ -606,4 +597,51 @@ footer{
     border-top: 10px solid #d27b43;
     font-weight: bolder;
     text-align: right;
+}
+
+.korpus{
+    padding: 20px 10px 10px 10px;
+}
+
+.korpus div{
+    margin-top: 10px;
+}
+
+.korpus > div,
+.korpus > input {
+    display: none;
+}
+.korpus label {
+    padding: 7px;
+    line-height: 40px;
+    cursor: pointer;
+    position: relative;
+    bottom: 1px;
+    background: #b26839;
+    font-size: 1.3em;
+    margin-right: 5px;
+}
+.korpus input[type="radio"]:checked + label {
+    background: #d27b43;
+}
+.korpus > input:nth-of-type(1):checked ~ div:nth-of-type(1),
+.korpus > input:nth-of-type(2):checked ~ div:nth-of-type(2) {
+    display: block;
+}
+
+@-webkit-keyframes example {
+    0% {opacity: 0;}
+    25% {opacity: 0.3;}
+    50% {opacity:0.5;}
+    75% {opacity:0.7;}
+    100% {opacity:1;}
+}
+
+/* Standard syntax */
+@keyframes example {
+    0% {opacity: 0;}
+    25% {opacity: 0.3;}
+    50% {opacity:0.5;}
+    75% {opacity:0.7;}
+    100% {opacity:1;}
 }

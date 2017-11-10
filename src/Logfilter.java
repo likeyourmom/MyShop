@@ -50,19 +50,22 @@ public class Logfilter implements Filter {
 
                 break;
             case "/item":
-                int itemId = Integer.parseInt(request.getParameter("id"));
+                int itemId = 0;
+                try{
+                    Integer.parseInt(request.getParameter("id"));
+                }catch (Exception ex){}
                 logger.info("Просмотр товара с номером "+itemId);
                 break;
             case "/cabinet":
                 logger.info("Пользователь " + user +" зашёл в личный кабинет");
                 break;
 
-            case "/comment":
+            case "/comments":
                 String methodComment = ((HttpServletRequest) request).getMethod();
                 if(methodComment.equals("POST"))
-                    logger.info("Пользователь "+((HttpServletRequest) request).getUserPrincipal().getName()
+                    logger.info("Пользователь "+user
                             +" оставил комментарий");
-                else logger.info("Пользователь "+((HttpServletRequest) request).getUserPrincipal().getName()
+                else logger.info("Пользователь "+user
                         +" запросил все комментарии");
                 break;
 
