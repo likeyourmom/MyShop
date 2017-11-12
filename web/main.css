@@ -522,7 +522,7 @@ span#result{
 
 div.cabinet_block{
     display: inline-block;
-    min-width: 248px;
+    width: 250px;
     vertical-align: top;
 }
 
@@ -571,7 +571,7 @@ div#comments-area button.button{
 }
 
 div#comments-area textarea{
-    width: 82%;
+    width: 730px;
     resize: none;
     outline: none;
     overflow: auto;
