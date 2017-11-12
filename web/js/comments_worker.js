@@ -9,10 +9,8 @@ function loadComments() {
         xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
 
     xmlhttp.onreadystatechange = function() {
-        console.log("Запрос отправлен");
-        if (xmlhttp.readyState==4){
+        if (xmlhttp.readyState == 4){
             document.getElementById("comments").innerHTML = xmlhttp.responseText;
-            console.log("Ответ получен");
         }
     }
 

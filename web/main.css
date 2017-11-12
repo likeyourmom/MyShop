@@ -233,7 +233,7 @@ span.discr a{
     display: inline-block;
     color: white;
     text-decoration: none;
-    padding: .5em 2em;
+    padding: .3em 1em;
     outline: none;
     border-width: 2px 0;
     border-style: solid none;
@@ -527,7 +527,7 @@ div.cabinet_block{
 }
 
 div.cabinet_block table{
-    width: 900px !important;
+    width: 890px !important;
     animation-name: example;
     animation-duration: 1s;
 }
@@ -547,7 +547,7 @@ div#datetime{
 }
 
 div.comment{
-    width: 875px;
+    width: 865px;
     font-size: 1.1em;
     padding: 10px;
     border: 3px solid #D27B43;
@@ -557,6 +557,11 @@ div.comment{
 
 div.comment hr{
     color: #D27B43;
+}
+
+div#comments{
+    animation-name: example;
+    animation-duration: 1s;
 }
 
 div#comments-area button.button{
@@ -581,6 +586,10 @@ div.comment p{
     text-transform: none !important;
     max-width: 800px;
     word-break: break-all;
+}
+
+span.c_info{
+    font-size: 20px;
 }
 
 span.c_info b{
