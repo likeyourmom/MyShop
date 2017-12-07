@@ -20,4 +20,4 @@
 <b>Шестая:</b><br>
 Появлеятся вторая таблица в нашей БД для отзывов, пляски с AJAX, пару (сотен) строк для стилей и... всё. На часах 5 утра, красные глаза, а напротив полностью готовый к бою интернет магазин. <br>
 
-Dota 3 на javascript'e: https://github.com/likeyourmom/javascript-tiny-platformer
+Dota 3 на javascript'e: https://github.com/likeyourmom/Simple-JS-Platformer
