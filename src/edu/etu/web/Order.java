@@ -34,9 +34,9 @@ public class Order extends HttpServlet {
         session.setAttribute("purchases",null);
         session.setAttribute("order_success", true);
 
-        response.addCookie(new Cookie("one", null));
-        response.addCookie(new Cookie("two", null));
-        response.addCookie(new Cookie("three", null));
+        response.addCookie(new Cookie("one", "0"));
+        response.addCookie(new Cookie("two", "0"));
+        response.addCookie(new Cookie("three", "0"));
 
         response.sendRedirect(".");
     }
